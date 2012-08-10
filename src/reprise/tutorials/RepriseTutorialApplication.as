@@ -2,20 +2,23 @@ package reprise.tutorials
 {
 
 	import reprise.core.Application;
+	import reprise.external.XMLResource;
 
 	public class RepriseTutorialApplication extends Application
 	{
-		//----------------------              Public Properties             ----------------------//
+		private const STRUCTURE_URL : String = "structure.xml";
+		private var _xmlResource : XMLResource;
 
-
-		//----------------------       Private / Protected Properties       ----------------------//
-
-
-		//----------------------               Public Methods               ----------------------//
-		public function RepriseTutorialApplication ()
+		override protected function loadResources() : void
 		{
+			super.loadResources();
+			_xmlResource = new XMLResource(stage.loaderInfo.parameters.structure_xml || STRUCTURE_URL);
+			addResource(_xmlResource);
 		}
 
-		//----------------------         Private / Protected Methods        ----------------------//
+		override protected function startApplication() : void
+		{
+			m_rootElement.initFromXML(_xmlResource.content());
+		}
 	}
 }
