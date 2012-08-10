@@ -1,4 +1,24 @@
-body
+h1
 {
-	background-color: #ff00ff;
+	font-size: 72;
+}
+h2
+{
+	font-size: 48;
+}
+h3
+{
+	font-size: 36;
+}
+h4
+{
+	font-size: 24;
+}
+h5
+{
+	font-size: 18;
+}
+h6
+{
+	font-size: 14;
 }
