@@ -1,6 +1,9 @@
 package reprise.tutorials
 {
+
+	import reprise.controls.SimpleButton;
 	import reprise.core.Application;
+	import reprise.core.UIRendererFactory;
 	import reprise.external.XMLResource;
 
 	public class RepriseTutorialApplication extends Application
@@ -16,7 +19,14 @@ package reprise.tutorials
 
 		override protected function startApplication() : void
 		{
+			registerRenderer();
 			m_rootElement.initFromXML(_xmlResource.content());
+		}
+
+		private function registerRenderer () : void
+		{
+			var renderFactory : UIRendererFactory = m_rootElement.uiRendererFactory();
+			renderFactory.registerTagRenderer("div", SimpleButton);
 		}
 	}
 }
