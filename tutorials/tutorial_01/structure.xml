@@ -1,9 +1,0 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<body>
-	<div  class="block block-1" label="absolute positioning">
-		<div class="block block-2">
-		</div>
-	</div>
-	<div  class="block block-3">
-	</div>
-</body>
